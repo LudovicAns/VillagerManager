@@ -1,0 +1,10 @@
+name: VillagerManager
+version: '${project.version}'
+main: fr.ludovicans.villagermanager.VillagerManager
+api-version: 1.19
+prefix: VillagerManager
+authors: [ LudovicAns ]
+depend:
+  - LansLib
+description: Manage vallagers on your minecraft server.
+website: https://github.com/LudovicAns
