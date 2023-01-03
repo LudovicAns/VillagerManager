@@ -6,7 +6,7 @@
 
     <groupId>fr.ludovicans</groupId>
     <artifactId>VillagerManager</artifactId>
-    <version>1.0.1</version>
+    <version>1.1.0</version>
     <packaging>jar</packaging>
 
     <name>VillagerManager</name>
@@ -75,7 +75,7 @@
         <dependency>
             <groupId>fr.ludovicans</groupId>
             <artifactId>LansLib</artifactId>
-            <version>1.0.0</version>
+            <version>1.1.0</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

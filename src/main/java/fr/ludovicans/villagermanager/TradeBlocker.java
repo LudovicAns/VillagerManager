@@ -1,11 +1,13 @@
 package fr.ludovicans.villagermanager;
 
 import fr.ludovicans.lanslib.configuration.ConfigurationManager;
-import io.papermc.paper.event.player.PlayerTradeEvent;
+import fr.ludovicans.lanslib.utils.ColoredText;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
+import org.bukkit.event.inventory.InventoryOpenEvent;
+import org.bukkit.event.inventory.InventoryType;
 
 public class TradeBlocker implements Listener {
 
@@ -16,11 +18,16 @@ public class TradeBlocker implements Listener {
     }
 
     @EventHandler(priority = EventPriority.HIGHEST)
-    private void onPlayerTrade(PlayerTradeEvent event) {
+    private void onPlayerTrade(InventoryOpenEvent event) {
         final FileConfiguration configurationFile = configurationManager.getConfigurationFile("config.yml");
         final boolean tradeEnabled = configurationFile.getBoolean("trades.enabled");
 
-        if (!tradeEnabled) {
+        if (event.getInventory().getType() == InventoryType.MERCHANT && !tradeEnabled) {
+            final String message = configurationManager
+                    .getConfigurationFile("messages.yml")
+                    .getString("trade-disabled");
+
+            event.getPlayer().sendMessage(new ColoredText(message).buildComponent());
             event.setCancelled(true);
         }
     }

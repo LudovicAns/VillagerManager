@@ -20,20 +20,27 @@ public final class VillagerManager extends JavaPlugin {
 
         this.configurationManager = new ConfigurationManager(this);
         configurationManager.setupDataFolder();
+        initConfigurationFiles();
 
+        registerCommands();
+
+        this.getServer().getPluginManager().registerEvents(new TradeBlocker(configurationManager), this);
+        this.getServer().getPluginManager().registerEvents(new TradeBlacklist(configurationManager), this);
+        this.getServer().getPluginManager().registerEvents(new BreedBlocker(configurationManager), this);
+    }
+
+    private void initConfigurationFiles() {
         new Config(configurationManager);
         new Messages(configurationManager);
+    }
 
+    private void registerCommands() {
         PaperCommandManager manager = new PaperCommandManager(this);
         manager.registerCommand(new VillagerManagerCommand());
         manager.getCommandCompletions().registerAsyncCompletion(
                 "vmreload",
                 context -> configurationManager.getFilesMap().keySet().stream().map(File::getName).toList()
         );
-
-        this.getServer().getPluginManager().registerEvents(new TradeBlocker(configurationManager), this);
-        this.getServer().getPluginManager().registerEvents(new TradeBlacklist(configurationManager), this);
-        this.getServer().getPluginManager().registerEvents(new BreedBlocker(configurationManager), this);
     }
 
     @Override
