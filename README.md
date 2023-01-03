@@ -1,5 +1,5 @@
 <h1 align="center">
-  <a href="https://github.com/LudovicAns/LansLib"><img src="./logo.png" alt="Logo LansLib" width="400"></a>
+  <a href="https://github.com/LudovicAns/VillagerManager"><img src="./logo.png" alt="Logo LansLib" width="400"></a>
   <br>
 </h1>
 
