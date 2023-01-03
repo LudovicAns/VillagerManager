@@ -3,7 +3,7 @@
   <br>
 </h1>
 
-<h4 align="center">My personal library for Paper plugin..</h4>
+<h4 align="center">Manage villagers on your minecraft server.</h4>
 
 
 <p align="center">
