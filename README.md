@@ -38,8 +38,8 @@ For now, only one command is available to reload your configurations.
 
 ## Download
 
-You can [download](https://github.com/LudovicAns/LansLib/releases/download/v1.1.0/LansLib-1.1.0.jar) latest version or
-download [specific version](https://github.com/LudovicAns/LansLib/releases).
+You can [download](https://github.com/LudovicAns/VillagerManager/releases/download/v1.1.0/VillagerManager-1.1.0.jar) latest version or
+download [specific version](https://github.com/LudovicAns/VillagerManager/releases).
 
 ## Credits
 
