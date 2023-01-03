@@ -47,6 +47,8 @@ This plugin uses the following open source packages:
 
 - [LansLib](https://github.com/LudovicAns/LansLib)
 
+## License
+
 MIT
 
 ---
